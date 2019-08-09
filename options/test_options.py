@@ -9,7 +9,7 @@ class TestOptions(BaseOptions):
         self.parser.add_argument('--results_dir', type=str, default='./results/', help='saves results here.')
         self.parser.add_argument('--aspect_ratio', type=float, default=1.0, help='aspect ratio of result images')
 
-        self.parser.add_argument('--which_epoch', required=True, type=int, help='which epoch to load for inference?')
+        self.parser.add_argument('--which_epoch', type=int, help='which epoch to load for inference?')
         self.parser.add_argument('--phase', type=str, default='test', help='train, val, test, etc (determines name of folder to load from)')
 
         self.parser.add_argument('--how_many', type=int, default=50, help='how many test images to run (if serial_test not enabled)')

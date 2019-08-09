@@ -9,11 +9,11 @@ class BaseOptions():
         self.initialized = False
 
     def initialize(self):
-        self.parser.add_argument('--name', required=True, type=str, help='name of the experiment. It decides where to store samples and models')
+        self.parser.add_argument('--name', type=str, help='name of the experiment. It decides where to store samples and models')
         self.parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints', help='models are saved here')
 
-        self.parser.add_argument('--dataroot', required=True, type=str, help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
-        self.parser.add_argument('--n_domains', required=True, type=int, help='Number of domains to transfer among')
+        self.parser.add_argument('--dataroot', type=str, help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
+        self.parser.add_argument('--n_domains', type=int, help='Number of domains to transfer among')
 
         self.parser.add_argument('--max_dataset_size', type=int, default=float("inf"), help='Maximum number of samples allowed per dataset. If the dataset directory contains more than max_dataset_size, only a subset is loaded.')
         self.parser.add_argument('--resize_or_crop', type=str, default='resize_and_crop', help='scaling and cropping of images at load time [none|resize|resize_and_crop|crop]')
